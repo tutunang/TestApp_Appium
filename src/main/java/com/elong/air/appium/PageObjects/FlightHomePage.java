@@ -15,9 +15,9 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import io.appium.java_client.android.AndroidDriver;
 
-import com.elong.air.appium.base.BasePage;
+import com.elong.air.appium.base.BaseAppPage;
 
-public class FlightHomePage extends BasePage{
+public class FlightHomePage extends BaseAppPage{
  public FlightHomePage(AndroidDriver driver){
 	 super(driver);
  }

@@ -12,10 +12,9 @@ public class AppTest extends BaseAppTestClass{
 	@Test
 	public void testApp() throws Exception {
 		 Thread.sleep(5000);
-		   int width=driver.manage().window().getSize().width;
-		    int height=driver.manage().window().getSize().height;
-		    System.out.print(width+"jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj");
-		    System.out.print(height);
+		    
+		    
+		    
 //         int width=driver.manage().window().getSize().width;
 //         int height=driver.manage().window().getSize().height;
 //    	for(int i=0;i<=1;i++){

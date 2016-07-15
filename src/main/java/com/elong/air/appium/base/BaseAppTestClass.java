@@ -1,10 +1,12 @@
 package com.elong.air.appium.base;
 
 import io.appium.java_client.android.AndroidDriver;
+
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -13,6 +15,8 @@ import org.testng.ITestResult;
 import org.testng.Reporter;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeSuite;
+
 import com.elong.air.appium.DriverFactory.AppDriverFactory;
 import com.elong.air.appium.tools.OptionFile;
 
@@ -54,8 +58,25 @@ public class BaseAppTestClass
 	 }
 	 
 	 
-	 
-	
+	 @BeforeSuite
+	 public void distoryScreenShot(){
+		 deleteDir((new File("ExceptionScreenshotImg")));
+		
+	 }
+	 /**
+	  * 递归实现删除截图
+	  * @param dir
+	  */
+	 public  void deleteDir(File dir) {
+	        if (dir.isDirectory()) {
+	            String[] children = dir.list();
+	            for (int i=0; i<children.length; i++) {
+	              deleteDir(new File(dir, children[i]));
+	            }
+	        }
+	        // 目录此时为空，可以删除
+	        dir.delete();
+	    }
 
 		/**
 		 * 自动截图实现方法，以测试类名为文件夹存储失败的截图

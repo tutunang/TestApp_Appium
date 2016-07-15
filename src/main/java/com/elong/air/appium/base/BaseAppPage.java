@@ -26,7 +26,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.elong.air.appium.tools.OptionFile;
 
-public class BasePage {
+public class BaseAppPage {
 
 	public static final String NO_SUCH_FRAME = "no-such-frame";
 	protected String name = "";
@@ -44,7 +44,8 @@ public class BasePage {
 	 * @param driver
 	 * @param title
 	 */
-	public BasePage(AndroidDriver driver, final String title) {
+		
+	public BaseAppPage(AndroidDriver driver, final String title) {
 		log.debug("------使用BasePageObject(WebDriver driver)构造方法开始------");
 		
 		//final String pagetitle = this.getClass().getCanonicalName();
@@ -79,7 +80,7 @@ public class BasePage {
 	 * @param driver
 	 * @update wenjing
 	 */
-	public BasePage(AndroidDriver driver) {
+	public BaseAppPage(AndroidDriver driver) {
 		log.debug("------使用BasePageObject(WebDriver driver)构造方法开始------");
 		
 		final String pagetitle = this.getClass().getCanonicalName();
@@ -109,7 +110,7 @@ public class BasePage {
 //		new AjaxElementLocatorFactory(driver, TIMEOUT), this);
 //
 //	}
-	public BasePage() {
+	public BaseAppPage() {
 	}
 	
 	
@@ -475,5 +476,36 @@ public class BasePage {
 	protected void testriver() {
 	  
 	}
-	/*----------------------------qiaojiafei----------------------------*/
+	/*----------------------------app ----------------------------*/
+	 public void swipeToUp(AndroidDriver driver, int during) {
+	        int width = driver.manage().window().getSize().width;
+	        int height = driver.manage().window().getSize().height;
+	        driver.swipe(width / 2, height * 3 / 4, width / 2, height / 4, during);
+	        // wait for page loading
+	    }
+
+	 
+	    public void swipeToDown(AndroidDriver driver, int during) {
+	        int width = driver.manage().window().getSize().width;
+	        int height = driver.manage().window().getSize().height;
+	        driver.swipe(width / 2, height / 4, width / 2, height * 3 / 4, during);
+	        // wait for page loading
+	    }
+
+	
+	    public void swipeToLeft(AndroidDriver driver, int during) {
+	        int width = driver.manage().window().getSize().width;
+	        int height = driver.manage().window().getSize().height;
+	        driver.swipe(width * 3 / 4, height / 2, width / 4, height / 2, during);
+	        // wait for page loading
+	    }
+
+
+	    public void swipeToRight(AndroidDriver driver, int during) {
+	        int width = driver.manage().window().getSize().width;
+	        int height = driver.manage().window().getSize().height;
+	        driver.swipe(width / 4, height / 2, width * 3 / 4, height / 2, during);
+	        // wait for page loading
+	    }
+     
 }

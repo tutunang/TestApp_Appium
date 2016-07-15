@@ -5,6 +5,7 @@
     <classes>
       <class name="Appium.elongTest.H5Test">
         <methods>
+          <include name="distoryScreenShot"/>
           <include name="distoryDriver"/>
           <include name="setUpAndroidDriver"/>
           <include name="testH5"/>

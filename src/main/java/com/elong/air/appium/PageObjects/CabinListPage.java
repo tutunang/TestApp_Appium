@@ -11,9 +11,9 @@ import org.openqa.selenium.support.FindBy;
 
 import io.appium.java_client.android.AndroidDriver;
 
-import com.elong.air.appium.base.BasePage;
+import com.elong.air.appium.base.BaseAppPage;
 
-public class CabinListPage extends BasePage{
+public class CabinListPage extends BaseAppPage{
 	public CabinListPage(AndroidDriver driver){
 		super(driver);
 	}
