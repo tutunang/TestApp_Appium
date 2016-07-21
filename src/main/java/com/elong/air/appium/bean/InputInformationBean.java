@@ -3,17 +3,12 @@ package com.elong.air.appium.bean;
 import java.util.List;
 
 public class InputInformationBean {
-	public boolean Receipt;
+	public String Receipt;
 	public String ContactTel;
 	public List<CustomerBean> customer;
 	public MailAddressBean address;
 	
-	public boolean isReceipt() {
-		return Receipt;
-	}
-	public void setReceipt(boolean receipt) {
-		Receipt = receipt;
-	}
+
 	public String getContactTel() {
 		return ContactTel;
 	}
@@ -31,6 +26,12 @@ public class InputInformationBean {
 	}
 	public void setAddress(MailAddressBean address) {
 		this.address = address;
+	}
+	public String getReceipt() {
+		return Receipt;
+	}
+	public void setReceipt(String receipt) {
+		Receipt = receipt;
 	}
 	
 

@@ -7,6 +7,8 @@ public String Start_date;
 public String Return_date;
 public String Cabin_leavel;
 public String Travel_type;
+public InputInformationBean InputInformation_Bean;
+
 public String getStart_city() {
 	return Start_city;
 }
@@ -42,6 +44,12 @@ public String getTravel_type() {
 }
 public void setTravel_type(String travel_type) {
 	Travel_type = travel_type;
+}
+public InputInformationBean getInputInformation_Bean() {
+	return InputInformation_Bean;
+}
+public void setInputInformation_Bean(InputInformationBean inputInformation_Bean) {
+	InputInformation_Bean = inputInformation_Bean;
 }
 
 

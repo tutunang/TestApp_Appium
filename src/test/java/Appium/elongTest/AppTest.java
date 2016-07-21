@@ -3,13 +3,14 @@ package Appium.elongTest;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
+import com.elong.air.appium.DataProvider.BaseProvider;
 import com.elong.air.appium.base.BaseAppTestClass;
 
 @Listeners({com.elong.air.appium.base.BaseScreenShortListener.class})
 public class AppTest extends BaseAppTestClass{
 	
 	
-	@Test
+	@Test(dataProvider="testdp",dataProviderClass = BaseProvider.class)
 	public void testApp() throws Exception {
 		 Thread.sleep(5000);
 		    
