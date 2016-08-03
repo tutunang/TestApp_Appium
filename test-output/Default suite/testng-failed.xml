@@ -8,7 +8,7 @@
           <include name="distoryScreenShot"/>
           <include name="distoryDriver"/>
           <include name="setUpAndroidDriver"/>
-          <include name="testH5"/>
+          <include name="testH5" invocation-numbers="0"/>
         </methods>
       </class> <!-- Appium.elongTest.H5Test -->
     </classes>

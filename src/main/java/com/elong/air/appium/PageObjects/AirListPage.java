@@ -25,7 +25,8 @@ public List<WebElement> airList;
 
 
 
-public void chooseAirPlan(){
+public AirClassTypePage chooseAirPlan(){
+
 	WebDriverWait wait = new WebDriverWait(driver, 100);
 	wait.until(new ExpectedCondition<Boolean>() {
 		public Boolean apply(WebDriver arg0) {
@@ -39,5 +40,6 @@ public void chooseAirPlan(){
     int a=random.nextInt(airList.size());
 	String str="document.getElementsByClassName('list')[0].children['"+a+"'].click()";
 	((JavascriptExecutor)driver).executeScript(str);
+	return new AirClassTypePage(driver);
 }
 }

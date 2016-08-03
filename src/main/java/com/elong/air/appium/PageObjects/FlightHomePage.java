@@ -80,11 +80,16 @@ public class FlightHomePage extends BaseAppPage{
   }
   public void chooseStartDate(String date){
 	    click(startDate);
-//		String str = "document.getElementsByClassName('date-region start-date')[0].firstElementChild.setAttribute= '"+date+"'";
-//		String str2 = "document.getElementsByClassName('date-region start-date')[0].firstElementChild.getAttribute";
-	
-//		((JavascriptExecutor)driver).executeScript(str,startDate);
-	    String xpath="//div[@class='cld page-plugin plugin-inited cld-active plugin-show']//li[@data-day='"+date+"']";
+	    final String xpath="//div[@class='cld page-plugin plugin-inited cld-active plugin-show']//li[@data-day='"+date+"']";
+		WebDriverWait wait = new WebDriverWait(driver, 100);
+		wait.until(new ExpectedCondition<Boolean>() {
+			public Boolean apply(WebDriver arg0) {
+			boolean falg=arg0.findElement(By.xpath(xpath)).isDisplayed();
+			return falg;
+				
+			}
+		});
+	  
 	    driver.findElement(By.xpath(xpath)).click();
 		
   }

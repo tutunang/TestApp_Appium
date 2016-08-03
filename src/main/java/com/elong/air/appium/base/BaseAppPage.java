@@ -82,7 +82,7 @@ public class BaseAppPage {
 	 */
 	public BaseAppPage(AndroidDriver driver) {
 		log.debug("------使用BasePageObject(WebDriver driver)构造方法开始------");
-		
+		driver.navigate().refresh();
 		final String pagetitle = this.getClass().getCanonicalName();
 		final String logo = OptionFile.readProperties(
 				"./src/main/resources/pagetitle.properties", pagetitle);
@@ -131,6 +131,7 @@ public class BaseAppPage {
 	}
 
 	protected void setCheck(WebElement element) {
+		boolean fa=element.isSelected();
 		if (element.isSelected()) {
 			return;
 		} else {

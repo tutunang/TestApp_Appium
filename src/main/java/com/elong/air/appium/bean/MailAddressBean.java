@@ -6,6 +6,7 @@ public String Mtel;
 public String MaddressDetails;
 public String Mcode;
 public String InvoiceTitle;
+public String Provinces;
 public String getMname() {
 	return Mname;
 }
@@ -35,6 +36,12 @@ public String getInvoiceTitle() {
 }
 public void setInvoiceTitle(String invoiceTitle) {
 	InvoiceTitle = invoiceTitle;
+}
+public String getProvinces() {
+	return Provinces;
+}
+public void setProvinces(String provinces) {
+	Provinces = provinces;
 }
 
 }
