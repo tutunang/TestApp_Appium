@@ -1,6 +1,6 @@
 package com.elong.air.appium.base;
 
-import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.AppiumDriver;
 
 import java.io.File;
 import java.io.IOException;
@@ -11,6 +11,7 @@ import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.ITestResult;
 import org.testng.Reporter;
 import org.testng.annotations.AfterClass;
@@ -18,7 +19,6 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeSuite;
 
 import com.elong.air.appium.DriverFactory.AppDriverFactory;
-import com.elong.air.appium.tools.OptionFile;
 
 /**
  * 
@@ -28,17 +28,17 @@ import com.elong.air.appium.tools.OptionFile;
  */
 public class BaseAppTestClass 
 {
-	 public  AndroidDriver  driver;
-	 public AndroidDriver getDriver() {
+	 public  AppiumDriver  driver;
+	 public AppiumDriver getDriver() {
 	        System.out.println("这是构造方法");
 		return driver;
 	}
 
-	public void setDriver(AndroidDriver driver) {
+	public void setDriver(AppiumDriver driver) {
 		this.driver = driver;
 	}
 
-	private BaseAppTestClass(AndroidDriver driver){
+	private BaseAppTestClass(AppiumDriver driver){
 		 this.driver=driver;
 	 }
 	 
@@ -88,7 +88,7 @@ public class BaseAppTestClass
 		 */
 		protected void takeScreenShort(ITestResult result) {
 			Object currentClass = result.getInstance();
-					AndroidDriver andDriver = ((BaseAppTestClass) currentClass).getDriver();		
+			RemoteWebDriver andDriver = ((BaseAppTestClass) currentClass).getDriver();		
 			if (andDriver != null) {
 				Date currentTime = new Date();
 				SimpleDateFormat formatter = new SimpleDateFormat(

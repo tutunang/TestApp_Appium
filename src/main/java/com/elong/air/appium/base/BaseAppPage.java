@@ -1,5 +1,6 @@
 package com.elong.air.appium.base;
 
+import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 
 import java.util.Arrays;
@@ -17,6 +18,7 @@ import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 import org.openqa.selenium.support.ui.ExpectedCondition;
@@ -31,7 +33,7 @@ public class BaseAppPage {
 	public static final String NO_SUCH_FRAME = "no-such-frame";
 	protected String name = "";
 
-	public AndroidDriver driver;
+	public AppiumDriver driver;
 	//private Logger log = Logger.getLogger(BasePageObject.class);
 	protected Logger log = Logger.getLogger(this.getClass());
 	// 全局的超时时间设置
@@ -45,7 +47,7 @@ public class BaseAppPage {
 	 * @param title
 	 */
 		
-	public BaseAppPage(AndroidDriver driver, final String title) {
+	public BaseAppPage(AppiumDriver driver, final String title) {
 		log.debug("------使用BasePageObject(WebDriver driver)构造方法开始------");
 		
 		//final String pagetitle = this.getClass().getCanonicalName();
@@ -80,9 +82,9 @@ public class BaseAppPage {
 	 * @param driver
 	 * @update wenjing
 	 */
-	public BaseAppPage(AndroidDriver driver) {
+	public BaseAppPage(AppiumDriver driver) {
 		log.debug("------使用BasePageObject(WebDriver driver)构造方法开始------");
-		driver.navigate().refresh();
+		//driver.navigate().refresh();
 		final String pagetitle = this.getClass().getCanonicalName();
 		final String logo = OptionFile.readProperties(
 				"./src/main/resources/pagetitle.properties", pagetitle);

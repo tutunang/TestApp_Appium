@@ -1,22 +1,19 @@
 package com.elong.air.appium.PageObjects;
 
+import io.appium.java_client.AppiumDriver;
+
 import java.util.List;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.html5.LocalStorage;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.FindBy;
 
-import io.appium.java_client.android.AndroidDriver;
-
 import com.elong.air.appium.base.BaseAppPage;
-import com.elong.air.appium.bean.CustomerBean;
 import com.elong.air.appium.bean.InputInformationBean;
-import com.sun.jna.platform.unix.X11.Window;
-import com.thoughtworks.selenium.webdriven.Windows;
 
 public class InputInformationPage extends BaseAppPage {
-	public InputInformationPage(AndroidDriver driver) {
+	public InputInformationPage(AppiumDriver driver) {
 		super(driver);
 	}
 

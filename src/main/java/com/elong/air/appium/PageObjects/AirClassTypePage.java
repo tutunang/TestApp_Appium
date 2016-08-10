@@ -6,16 +6,18 @@ import java.util.Random;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 
 import com.elong.air.appium.base.BaseAppPage;
 
 public class AirClassTypePage extends BaseAppPage{
-	public AirClassTypePage(AndroidDriver driver){
+	public AirClassTypePage(AppiumDriver driver){
 		super(driver);
 	}
 	@FindBy(xpath="//ul[@class='list']/li//div[@class='order']/div[2]")

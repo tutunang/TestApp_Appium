@@ -11,13 +11,16 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 
 import com.elong.air.appium.base.BaseAppPage;
 
 public class AirListPage extends BaseAppPage{
-public AirListPage(AndroidDriver driver){
+public AirListPage(AppiumDriver driver){
+
 	super(driver);
+	driver.navigate().refresh();
 }
 @FindBy(xpath="//ul[@class='list']/li")
 public List<WebElement> airList;

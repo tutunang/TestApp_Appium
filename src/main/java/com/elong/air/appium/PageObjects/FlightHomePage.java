@@ -8,17 +8,19 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.remote.RemoteWebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 
 import com.elong.air.appium.base.BaseAppPage;
 
 public class FlightHomePage extends BaseAppPage{
- public FlightHomePage(AndroidDriver driver){
+ public FlightHomePage(AppiumDriver driver){
 	 super(driver);
  }
  @FindBy(css=".choose-btn.start>span")
