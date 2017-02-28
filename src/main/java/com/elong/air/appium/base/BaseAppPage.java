@@ -32,7 +32,7 @@ public class BaseAppPage {
 
 	public static final String NO_SUCH_FRAME = "no-such-frame";
 	protected String name = "";
-
+	private static String source=OptionFile.readProperties("./src/main/resources/config.properties", "source");
 	public AppiumDriver driver;
 	//private Logger log = Logger.getLogger(BasePageObject.class);
 	protected Logger log = Logger.getLogger(this.getClass());
@@ -83,12 +83,14 @@ public class BaseAppPage {
 	 * @update wenjing
 	 */
 	public BaseAppPage(AppiumDriver driver) {
+		this.driver = driver;
 		log.debug("------使用BasePageObject(WebDriver driver)构造方法开始------");
 		//driver.navigate().refresh();
+		if(source.equals("H5")){
 		final String pagetitle = this.getClass().getCanonicalName();
 		final String logo = OptionFile.readProperties(
 				"./src/main/resources/pagetitle.properties", pagetitle);
-		this.driver = driver;
+
 		System.out.println("当前page类是：" + pagetitle + " ;取到的logo是：" + logo);
 		
 		WebDriverWait wait = new WebDriverWait(driver, TIMEOUT);
@@ -100,6 +102,7 @@ public class BaseAppPage {
 			});
 		} catch (TimeoutException te) {
 			throw new IllegalStateException("页面未加载完毕或者找不到元素");
+		}
 		}
 
 		PageFactory.initElements(
@@ -480,15 +483,15 @@ public class BaseAppPage {
 	  
 	}
 	/*----------------------------app ----------------------------*/
-	 public void swipeToUp(AndroidDriver driver, int during) {
-	        int width = driver.manage().window().getSize().width;
-	        int height = driver.manage().window().getSize().height;
-	        driver.swipe(width / 2, height * 3 / 4, width / 2, height / 4, during);
+	 public void swipeToUp(AppiumDriver driver2, int during) {
+	        int width = driver2.manage().window().getSize().width;
+	        int height = driver2.manage().window().getSize().height;
+	        driver2.swipe(width / 2, height * 3 / 4, width / 2, height / 4, during);
 	        // wait for page loading
 	    }
 
 	 
-	    public void swipeToDown(AndroidDriver driver, int during) {
+	    public void swipeToDown(AppiumDriver driver, int during) {
 	        int width = driver.manage().window().getSize().width;
 	        int height = driver.manage().window().getSize().height;
 	        driver.swipe(width / 2, height / 4, width / 2, height * 3 / 4, during);
@@ -496,7 +499,7 @@ public class BaseAppPage {
 	    }
 
 	
-	    public void swipeToLeft(AndroidDriver driver, int during) {
+	    public void swipeToLeft(AppiumDriver driver, int during) {
 	        int width = driver.manage().window().getSize().width;
 	        int height = driver.manage().window().getSize().height;
 	        driver.swipe(width * 3 / 4, height / 2, width / 4, height / 2, during);
@@ -504,7 +507,7 @@ public class BaseAppPage {
 	    }
 
 
-	    public void swipeToRight(AndroidDriver driver, int during) {
+	    public void swipeToRight(AppiumDriver driver, int during) {
 	        int width = driver.manage().window().getSize().width;
 	        int height = driver.manage().window().getSize().height;
 	        driver.swipe(width / 4, height / 2, width * 3 / 4, height / 2, during);

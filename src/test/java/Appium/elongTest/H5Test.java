@@ -26,7 +26,6 @@ public class H5Test extends BaseAppTestClass{
 	fl.chooseArriverCity(scb.getEnd_city());
 	fl.chooseStartDate(scb.getStart_date());
 	AirListPage ap=	fl.searchButton();
-
 	AirClassTypePage acp=ap.chooseAirPlan();
 	InputInformationPage ip=acp.chooseClassType();
 	ip.addNewPassenger(scb.getInputInformation_Bean());

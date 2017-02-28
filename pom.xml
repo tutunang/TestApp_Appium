@@ -10,11 +10,6 @@
   <name>elongTest</name>
   <url>http://maven.apache.org</url>
 
- <!--   <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  </properties>
-  
-  -->
  <!-- maven 参数配置，这里引用不同的testng.xml -->
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -42,19 +37,16 @@
         <version>3.0</version>
         <scope>test</scope>
     </dependency>
-
-  
-
   <dependency>
 			<groupId>org.testng</groupId>
 			<artifactId>testng</artifactId>
 			<version>6.9.8</version>
 </dependency>
-<!--  <dependency>
+  <dependency>
         <groupId>org.seleniumhq.selenium</groupId>
         <artifactId>selenium-java</artifactId>
         <version>2.53.0</version>
-</dependency> -->
+</dependency> 
 <dependency>
 	<groupId>log4j</groupId>
 	<artifactId>log4j</artifactId>
@@ -82,12 +74,12 @@
 	<version>2.5</version>
 </dependency>
 	
-		<dependency>
+<dependency>
 	<groupId>org.apache.poi</groupId>
 	<artifactId>poi-ooxml</artifactId>
 	<version>3.9</version>
 </dependency>
-		<dependency>
+<dependency>
 	<groupId>org.apache.poi</groupId>
 	<artifactId>poi-scratchpad</artifactId>
 	<version>3.9</version>
@@ -96,24 +88,10 @@
 <dependency>
     <groupId>io.appium</groupId>
     <artifactId>java-client</artifactId>
-    <version>4.1.1</version>
+    <version>4.1.2</version>
 </dependency>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
-    </dependency>
-    
-    
-    
-    
-  
-
+   
   </dependencies>
-  
-  
-  
    <build>
   <plugins>
         <!-- 添加插件 关联testNg.xml -->
@@ -133,8 +111,6 @@
               </suiteXmlFiles>
               </configuration>
         </plugin> 
-
-       
   </plugins>
 </build>
 </project>

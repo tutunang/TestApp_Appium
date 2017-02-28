@@ -101,6 +101,18 @@ public class BaseEventListener implements AppiumWebDriverEventListener {
 		
 	}
 
+	public void afterChangeValueOf(WebElement arg0, WebDriver arg1,
+			CharSequence[] arg2) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void beforeChangeValueOf(WebElement arg0, WebDriver arg1,
+			CharSequence[] arg2) {
+		// TODO Auto-generated method stub
+		
+	}
+
 //	public void beforeNavigateTo(String url, WebDriver driver) {
 //		System.out.println("<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>");
 //		

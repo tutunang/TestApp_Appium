@@ -19,6 +19,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeSuite;
 
 import com.elong.air.appium.DriverFactory.AppDriverFactory;
+import com.elong.air.appium.tools.OptionFile;
 
 /**
  * 
@@ -28,6 +29,7 @@ import com.elong.air.appium.DriverFactory.AppDriverFactory;
  */
 public class BaseAppTestClass 
 {
+	 private static String source=OptionFile.readProperties("./src/main/resources/config.properties", "source");
 	 public  AppiumDriver  driver;
 	 public AppiumDriver getDriver() {
 	        System.out.println("这是构造方法");
@@ -53,8 +55,12 @@ public class BaseAppTestClass
 	 }
 	 @AfterClass
 	 public void distoryDriver(){
-		// driver.close();
-		 driver.quit();
+		 if(source.equals("App")){
+			driver.closeApp(); 
+		 }else{
+		driver.close();
+		driver.quit();
+			 }
 	 }
 	 
 	 

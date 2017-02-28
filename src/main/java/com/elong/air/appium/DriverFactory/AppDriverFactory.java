@@ -4,12 +4,9 @@ import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.events.EventFiringWebDriverFactory;
 import io.appium.java_client.remote.MobileCapabilityType;
-
 import java.io.File;
 import java.net.URL;
-
 import org.openqa.selenium.remote.DesiredCapabilities;
-
 import com.elong.air.appium.base.AlertListener;
 import com.elong.air.appium.base.ElementListener;
 import com.elong.air.appium.tools.OptionFile;
@@ -62,6 +59,8 @@ public static AppiumDriver<?> setUpDriver() throws Exception  {
 	        capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, platform_Name);  
 	        capabilities.setCapability(MobileCapabilityType.DEVICE_NAME,device_Name);  
 	        capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, platform_Version);  
+//	        capabilities.setCapability("appPackage", "com.android.browser");
+//	        capabilities.setCapability("appActivity", ".BrowserActivity");
 
 	  driver = new AndroidDriver(new URL(hubURL),capabilities);
       driver= EventFiringWebDriverFactory.getEventFiringWebDriver(driver, new AlertListener(), new ElementListener());

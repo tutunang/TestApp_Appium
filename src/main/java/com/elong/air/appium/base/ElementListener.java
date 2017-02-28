@@ -13,7 +13,7 @@ public class ElementListener implements ElementEventListener {
 	}
 
 	public void afterClickOn(WebElement arg0, WebDriver arg1) {
-	System.out.println("<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>");
+	
 		
 	}
 
@@ -23,7 +23,19 @@ public class ElementListener implements ElementEventListener {
 	}
 
 	public void beforeClickOn(WebElement arg0, WebDriver arg1) {
-		System.out.println("<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>");
+
+		
+	}
+
+	public void afterChangeValueOf(WebElement arg0, WebDriver arg1,
+			CharSequence[] arg2) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void beforeChangeValueOf(WebElement arg0, WebDriver arg1,
+			CharSequence[] arg2) {
+		// TODO Auto-generated method stub
 		
 	}
 

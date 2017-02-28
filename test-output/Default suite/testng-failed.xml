@@ -6,8 +6,7 @@
       <class name="Appium.elongTest.AppTest">
         <methods>
           <include name="distoryScreenShot"/>
-          <include name="testApp" invocation-numbers="0"/>
-          <include name="distoryDriver"/>
+          <include name="testApp"/>
           <include name="setUpAndroidDriver"/>
         </methods>
       </class> <!-- Appium.elongTest.AppTest -->
