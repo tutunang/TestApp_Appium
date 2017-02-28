@@ -6,6 +6,7 @@ import org.testng.annotations.Test;
 import com.elong.air.appium.AppPageObjects.AppAirListPage;
 import com.elong.air.appium.AppPageObjects.AppHomePage;
 import com.elong.air.appium.AppPageObjects.EnterPage;
+import com.elong.air.appium.AppPageObjects.SeatPage;
 import com.elong.air.appium.DataProvider.BaseProvider;
 import com.elong.air.appium.base.BaseAppTestClass;
 import com.elong.air.appium.bean.ConvertToBean;
@@ -24,7 +25,8 @@ public class AppTest extends BaseAppTestClass{
 	    Thread.sleep(5000);
 	    AppHomePage ap=  ep.enterToFlight();
 	    AppAirListPage al=ap.setInformation(scb);
-	    al.chooseLine(2);
+	    SeatPage sp=  al.chooseLine(2);
+	    sp.bookSeat(2);
 
 	}
 
