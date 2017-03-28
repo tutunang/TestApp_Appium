@@ -15,6 +15,8 @@ public EnterPage(AppiumDriver driver){
 @FindBy(id="com.elong.android.home:id/home_module_flight")
 public WebElement flightIcon;
 public AppHomePage enterToFlight(){
+	String ssss=driver.getPageSource();
+	System.out.println(ssss);
      click(flightIcon);
      return new AppHomePage(driver);
 }

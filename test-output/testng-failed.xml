@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
-  <test name="Default test(failed)">
+<suite name="Failed suite [Test_Appium]" parallel="true">
+  <listeners>
+    <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+    <listener class-name="com.elong.air.appium.base.BaseScreenShortListener"/>
+  </listeners>
+  <test name="H5(failed)" parallel="true">
     <classes>
       <class name="Appium.elongTest.AppTest">
         <methods>
@@ -12,5 +16,5 @@
         </methods>
       </class> <!-- Appium.elongTest.AppTest -->
     </classes>
-  </test> <!-- Default test(failed) -->
-</suite> <!-- Failed suite [Default suite] -->
+  </test> <!-- H5(failed) -->
+</suite> <!-- Failed suite [Test_Appium] -->

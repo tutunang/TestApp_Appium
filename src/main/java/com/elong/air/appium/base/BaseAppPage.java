@@ -131,7 +131,7 @@ public class BaseAppPage {
 	protected void setInputText(WebElement element, String text) {
 		// switchFrame(element);
 		System.out.println("--------sendkeys:"+text);
-		element.clear();//暂时注销，登录密码框会报错
+		//element.clear();//暂时注销，登录密码框会报错
 		element.sendKeys(text);
 	}
 
@@ -512,6 +512,7 @@ public class BaseAppPage {
 	        int height = driver.manage().window().getSize().height;
 	        driver.swipe(width / 4, height / 2, width * 3 / 4, height / 2, during);
 	        // wait for page loading
+
 	    }
      
 }

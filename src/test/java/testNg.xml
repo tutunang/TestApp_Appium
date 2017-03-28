@@ -3,12 +3,13 @@
 <listeners>
 <listener class-name="org.uncommons.reportng.HTMLReporter" />
 <listener class-name="com.elong.air.appium.base.BaseScreenShortListener" />
+ <listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
 </listeners>
- 
+    
 <test name="H5">
   <classes>
-      <class name="Appium.elongTest.H5Test"/>
-      
+   <!--  <class name="Appium.elongTest.H5Test"/>  --> 
+      <class name="Appium.elongTest.AppTest"/>
   </classes>
 </test> 
 

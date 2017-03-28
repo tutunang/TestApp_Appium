@@ -5,15 +5,16 @@
     <listener class-name="org.uncommons.reportng.HTMLReporter"/>
     <listener class-name="com.elong.air.appium.base.BaseScreenShortListener"/>
   </listeners>
-  <test name="OW(failed)" parallel="true">
+  <test name="H5(failed)" parallel="true">
     <classes>
-      <class name="Appium.elongTest.H5Test">
+      <class name="Appium.elongTest.AppTest">
         <methods>
           <include name="distoryScreenShot"/>
+          <include name="testApp" invocation-numbers="0"/>
+          <include name="distoryDriver"/>
           <include name="setUpAndroidDriver"/>
-          <include name="testH5"/>
         </methods>
-      </class> <!-- Appium.elongTest.H5Test -->
+      </class> <!-- Appium.elongTest.AppTest -->
     </classes>
-  </test> <!-- OW(failed) -->
+  </test> <!-- H5(failed) -->
 </suite> <!-- Failed suite [Test_Appium] -->

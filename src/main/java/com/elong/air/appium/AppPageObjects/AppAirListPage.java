@@ -21,7 +21,7 @@ public class AppAirListPage extends BaseAppPage{
 	
 public SeatPage chooseLine(int t){
 	//super.swipeToDown(driver, 2000);
-	
+
 List<WebElement> li=driver.findElementById("com.elong.android.flight:id/flightlist_listswitcher").findElements(By.id("com.elong.android.flight:id/flightlist_item_departtime"));
 	     System.out.println("<<<<<<<<"+li.size());
  

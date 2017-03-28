@@ -7,6 +7,7 @@ import java.util.List;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.Point;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -39,14 +40,10 @@ public WebElement travelType;
 @FindBy(id="com.elong.android.flight:id/flightsearch_submit")
 public WebElement searchButton;
 
-public AppAirListPage setInformation(SearchConditionBean sb){
-	//if(sb.getTravel_type().equals("round")){
-		//this.setCheck(travelType);
-	//}
+public AppAirListPage setInformation(SearchConditionBean sb) throws Exception{
+
 	click(leaveCityItem);
-	//leaveCityItem.click();
 	setInputText(inputCityTextField, sb.getStart_city());
-	//inputCityTextField.sendKeys(sb.getStart_city());
 	click(listItem);
 	click(arriveCityItem);
     setInputText(inputCityTextField, sb.getEnd_city());
@@ -57,8 +54,7 @@ public AppAirListPage setInformation(SearchConditionBean sb){
 	}
 
 	click(searchButton);
-//	click(startDateItem);
-//	setDate(4);
+
 	return new AppAirListPage(driver);
 	
 }
